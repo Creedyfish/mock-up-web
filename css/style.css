@@ -1,0 +1,802 @@
+/* 
+Theme Name: Mock-up
+Theme URI: http://localhost/wordpress/Mock-up-theme
+Author: Irvin Elbanbuena
+Author URI: http://localhost/wordpress
+Description: Create a mockup website referencing figma designs given.
+Version: 1.1
+Requires at least: 5.0
+Tested up to: 5.4
+Requires PHP: 7.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: twentytwenty
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others. */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Manrope&family=Poppins:wght@500&display=swap');
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#loader {
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #004938;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+  .loading h1{
+    color: #f5f1f3;
+    animation: pulse 1.5s infinite;
+}
+
+html{
+    font-size: 1em;
+    background-color: #f5f1f3;
+}
+
+
+
+a{
+    text-decoration: none;
+    color: inherit;
+    transition: all .2s ease-in-out ;
+}
+
+span{
+    font-family:'Manrope';
+    color: #403F3E;
+    
+}
+
+.img{
+    overflow: hidden    ;
+}
+
+h1{
+    font-family:'Amatic SC';
+    color: #004938;
+}
+
+.topnav{
+    display: none;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    background-color: #2C9B59;
+    padding: 0% 5%;
+    
+    
+}
+
+.con-date{
+    display: flex;
+    align-items: center;
+    font-family:'Manrope';
+    font-size: 1.1rem;
+    color: #f5f1f3;
+}
+
+.con{
+    padding-right: 1rem;
+}
+
+.date{
+    padding-left: 1rem;
+    border-left: 1px solid #f5f1f3;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: #004938;
+    align-items: center;
+    font-family: 'Poppins';
+    font-weight: 500;
+    font-size: 1.1rem;
+    color: #f5f1f3;
+    padding: 0% 5%;
+}
+
+
+.nav-items{
+    display: flex;
+    flex-direction: row;
+   
+    align-items: center;
+}
+
+.nav ul {
+    list-style: none;
+    align-items: center;
+    
+}
+  
+.nav li {
+    display: inline-block;
+    padding-left: 4rem;
+}
+
+section{
+    padding: 5%;
+    opacity: 0;
+}
+
+
+.hero-section{
+    
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    background-image: url("./assets/img/yellow-shape-bg.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position:top right;
+    opacity: 1;
+    overflow: hidden;
+}
+
+.hero-image{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    animation: slide-fade-left 0.2s ease-out forwards;
+    
+}
+
+.hero-image img{
+   width: 100%;
+   animation: spin 120s linear infinite;
+}
+
+.hero-section div{
+    flex: 1;
+}
+
+.hero-section .hero-text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.hero-text{
+ opacity: 0;
+}
+
+
+.hero-text h1{
+    font-size: 4rem;
+    padding-bottom: 1rem;
+}
+.hero-text span{
+    display: inline-block;
+    font-size: 2rem;
+    padding-bottom: 2rem;
+
+}
+
+button{
+    display: block;
+    font-family: 'Poppins';
+    font-weight: 500;
+    font-size: 1.1rem;
+    color: #004938;
+    background-color: #E3B602;
+    border-radius: 50px;
+    padding: 15px 40px;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s ease-in-out;;
+
+}
+
+.menu .hero-text span{
+    font-size: 1.1rem;
+    display: flex;
+    justify-content: center;
+
+}
+
+.menu .hero-text h1{
+    font-size: 3.25rem;
+    display: flex;
+    justify-content: center;
+
+}
+
+.food-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+   
+}
+
+.food-img{
+    overflow: hidden;
+}
+
+.food-img img{
+    width: 120%;
+    
+}
+
+.food-item{
+    width: 30%;
+    transition: all 0.2s ease-in-out;
+    padding: 1rem;
+
+}
+
+
+.food-title span{
+    font-size: 1.1rem;
+    display: flex;
+    justify-content: center;
+
+}
+
+.food-desc span{
+    font-size: 1rem;
+    display: flex;
+    text-align: center;
+
+}
+
+.food-price span{
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+
+}
+
+.call-to-action{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.btn-container{
+    padding: 1rem;
+
+}
+
+.unactive{
+    background-color: #f5f1f3;
+    color: #403F3E;
+    border: 1px solid #403F3E;
+
+}
+
+.review-container{
+    background-color: #2C9B59;
+    display: flex;
+    flex-direction: column;
+   
+}
+
+.rev-cont{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 4rem;
+
+}
+
+.review-container span{
+    color: #f5f1f3;
+
+}
+
+.ratings, .review-desc, .prof-rev{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 2rem;
+    
+}
+
+.prof-rev img{
+    padding-right: 1rem;
+
+}
+
+.reviews{
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.review-img{
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    justify-content: center;
+
+}
+.review-img img{
+    height: 100%;
+
+}
+
+
+.reviews div {
+    flex: 1;
+ 
+}
+
+.reviews .hero-text{
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    color: #f5f1f3;
+    padding: 4rem;
+
+}
+
+.reviews h1{
+    font-size: 3.25rem;
+}
+
+.reviews span{
+    font-size: 1.1rem;
+}
+
+.reviews .hero-text h1, .reviews .hero-text span{
+    color: #f5f1f3;
+
+}
+
+.rev-cont{
+    background-color: #004938;
+}
+
+.ht-cont{
+    padding: 2rem;
+    
+   
+ }
+ 
+.review-desc{
+    font-size: 1rem;
+   
+}
+
+.prof-rev span{
+    font-weight: 700;
+
+}
+
+.product-desc span{
+    font-size: 1.1rem;
+
+}
+
+.product-desc h1{
+    font-size: 3.25rem;
+
+}
+
+.prd-cont{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+
+}
+
+.prod-text{
+    flex: 1;
+    
+}
+
+.prd-cont .hero-text{
+   padding: 4rem;
+    
+    
+}
+
+
+
+.hero-images{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    flex: 1;
+    width: 100%;
+   
+}
+
+.hero-images img{
+    padding: .5rem;
+    max-width: 40%;
+    height: auto;
+    
+}
+
+.contact-title{
+   padding-bottom: 5%;
+
+}
+
+.contact-title span{
+    font-size: 1.1rem;
+    display: flex;
+    justify-content: center;
+
+}
+
+.contact-title h1{
+    font-size: 3.25rem;
+    display: flex;
+    justify-content: center;
+
+}
+
+.contact-desc{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-bottom: 5%;
+    
+   
+}
+
+.call-icon, .email-icon, .location-icon{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.contact-number, .email, .location{
+    display: flex;
+    justify-content: center;
+
+}
+
+.email-item, .location-item, .contact-item{
+    flex: 1;
+
+}
+
+.contact-desc span{
+    font-size: 1.1rem;
+
+}
+
+.map{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    overflow: hidden;
+}
+
+footer .header{
+    display: flex;
+    background-color: #2C9B59;
+    justify-content: space-between;
+}
+
+/* hover */
+
+a:hover{
+    transform: scale(1.05);
+
+}
+
+.nav li:hover {
+    color: hsl(330, 17%, 75%);
+
+}
+
+button:hover{
+    color: hsl(166, 100%, 24%);
+    background-color: hsl(48, 98%, 55%);
+
+}
+
+
+.food-item:hover{
+    transform: scale(1.1);
+
+}
+
+.unactive:hover{
+    background-color: hsl(330, 17%, 85%);
+    color: hsl(30, 2%, 35%);
+    border: 1px solid #403F3E;
+}
+
+/* active */
+button:active{
+    transform: scale(.9);
+}
+
+
+/* Animation */
+@keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(-360deg);
+    }
+  }
+
+@keyframes slide-fade-right {
+    0% {
+      opacity: 0;
+      transform: translateX(-5rem);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+@keyframes slide-fade-left {
+    0% {
+      opacity: 0;
+      transform: translateX(5rem);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+@keyframes slide-fade-in {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+  }
+  @keyframes pulse {
+    0% {
+      opacity: 0.5;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0.5;
+    }
+
+}
+@keyframes slideIn {
+    from {
+    transform: translateY(-100%);
+    }
+    to {
+    transform: translateY(0);
+    }
+    }
+.animate {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: slide-fade-in 1s ease-out forwards;
+}
+.slide-fade-right{
+    
+  transform: translateY(-5rem);
+    animation: slide-fade-right 1s ease-out forwards;
+}
+.slide-fade-left{
+    
+    transform: translateY(10rem);
+      animation: slide-fade-left 1s ease-out forwards;
+}
+
+@media only screen and (max-width:768px){
+
+
+
+    .links{
+        display: flex;
+    }
+
+    .links img{
+        width: 40%;
+    }
+
+    .con-date{
+        font-size: 0.6rem;
+    }
+
+    button{
+        font-size: 1rem;
+       
+    }
+
+    .nav-items{
+        display: none;
+    }
+
+    .nav .button{
+        display: none;
+    }
+/* hamburger menu */
+
+nav{
+    display: block;
+    
+}
+.topnav {
+    display: flex;
+    flex-direction: column;
+    
+    position: relative;
+  }
+  
+.main-top{
+    display: flex;
+    justify-content: space-between;
+}
+
+  /* Hide the links inside the navigation menu (except for logo/home) */
+  .topnav #myLinks {
+    display: none;
+    
+  }
+
+  .topnav #myLinks.show {
+    display: block;
+    
+    }
+  
+  /* Style navigation menu links */
+  .topnav a { 
+    display: flex;
+    color: #f5f1f3;
+    padding: 2%;
+    justify-content: center;
+    font-family: 'Poppins';
+    font-size: 1rem;
+    padding: 2%;
+  }
+  
+  /* Style the hamburger menu */
+  .topnav a.icon {
+    align-items: center;
+
+  }
+  
+  /* Add a grey background color on mouse-over */
+  .active img{
+    width: 50%;
+  }
+  a.active {
+
+    padding: 2%;
+}
+
+  /* Style the active link (or home/logo) */
+  a:hover{
+    transform: none;
+}
+/* ----------------- */
+    
+    section{
+        text-align: center;
+    }
+
+    .hero-section{
+        height: auto;
+        flex-direction: column-reverse;
+    }
+
+    .hero-text h1{
+        font-size: 2rem;
+    }
+
+    .hero-text span{
+        font-size: 1rem;
+    }
+
+    .hero-image{
+        justify-content: center;
+    }
+    .hero-image img{
+        width: 75%;
+    }
+
+    .hero-btn{
+        display: flex;
+    justify-content: center;
+    }
+
+    .menu .hero-text h1 {
+        font-size: 2rem;
+    }
+
+    .food-desc{
+        display: none;
+    }
+
+    .call-to-action {
+        display: flex;
+        
+        flex-direction: column;
+    }
+
+    .btn-container {
+        padding: 1rem;
+        justify-content: center;
+        display: flex;
+    }
+
+    .reviews{
+        flex-direction: column;
+    }
+
+    .reviews h1{
+        font-size: 2rem;
+    }
+
+    .reviews span{
+        font-size: 1rem;
+    }
+
+    .prd-cont{
+        flex-direction: column;
+    }
+
+    .hero-images{
+        display: none;
+    }
+
+    .reviews-btn{
+        display: flex;
+        justify-content: center;
+    }
+
+    .review-img img{
+        width: 100%;
+    }
+
+    .contacts h1{
+        font-size: 2rem;
+    }
+
+    .contacts span{
+        font-size: 1rem;
+    }
+
+    .map img{
+        width: 100%;
+    }
+
+    
+
+    .contact-desc{
+        display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* add space between items */
+    align-items: center; /* center items vertically */
+    }
+    .contact-desc img{
+        width: 50%;
+    }
+    .email-item, .location-item, .contact-item {
+        flex: 1;
+        padding: 3%;
+    }
+
+    
+}
+
